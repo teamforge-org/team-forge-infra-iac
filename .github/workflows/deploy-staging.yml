@@ -3,14 +3,13 @@ name: Deploy to Staging
 on:
   workflow_call:
     inputs:
-      project_id:
-        required: true
-        type: string
       service_image:
         required: true
         type: string
     secrets:
       gcp_credentials:
+        required: true
+      project_id:
         required: true
 
 jobs:
