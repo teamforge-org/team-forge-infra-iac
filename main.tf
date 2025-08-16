@@ -124,6 +124,12 @@ resource "google_project_iam_member" "terraform_cicd_sa_IAM_admin" {
   member  = google_service_account.terraform_cicd_sa.member
 }
 
+resource "google_project_iam_member" "gcs_admin_iam" {
+  project = var.project
+  role    = "roles/storage.admin"
+  member  = google_service_account.terraform_cicd_sa.member
+}
+
 resource "google_service_account_key" "terraform_cicd_sa_key" {
   service_account_id = google_service_account.terraform_cicd_sa.id
   public_key_type    = "TYPE_X509_PEM_FILE"
