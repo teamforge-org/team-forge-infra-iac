@@ -6,17 +6,27 @@ variable "project" {
 
 variable "port" {
   description = "Port the container listens on"
-  type = number
-  default = 8080
+  type        = number
+  default     = 3000
 }
 
 variable "region" {
   description = "GCP region"
-  type = string
-  default = "us-central1"
+  type        = string
+  default     = "us-central1"
 }
 
 variable "docker_image" {
   description = "Docker image URL (Docker Hub or other registry)"
-  type = string
+  type        = string
+}
+
+variable "auth_secret" {
+  description = "Auth secret for application"
+  type        = string
+}
+
+variable "database_url" {
+  description = "Application database url"
+  type        = string
 }

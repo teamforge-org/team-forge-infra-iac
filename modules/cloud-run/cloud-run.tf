@@ -1,7 +1,8 @@
 resource "google_cloud_run_v2_service" "service" {
-  name     = var.service_name
-  location = var.location
-  project  = var.project
+  name                = var.service_name
+  location            = var.location
+  project             = var.project
+  deletion_protection = false
 
   template {
     scaling {
