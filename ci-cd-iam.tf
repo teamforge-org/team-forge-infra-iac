@@ -51,15 +51,17 @@ resource "google_project_iam_member" "terraform_cicd_sa_IAM_admin" {
   member  = google_service_account.terraform_cicd_sa.member
 }
 
-resource "google_project_iam_member" "gcs_admin_iam" {
-  project = var.project
-  role    = "roles/storage.admin"
-  member  = google_service_account.terraform_cicd_sa.member
-}
 
 resource "google_project_iam_member" "terraform_cicd_sa_key_admin" {
   project = var.project
   role    = "roles/iam.serviceAccountKeyAdmin"
+  member  = google_service_account.terraform_cicd_sa.member
+}
+
+
+resource "google_project_iam_member" "gcs_admin_iam" {
+  project = var.project
+  role    = "roles/storage.admin"
   member  = google_service_account.terraform_cicd_sa.member
 }
 
