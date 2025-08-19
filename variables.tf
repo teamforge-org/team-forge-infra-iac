@@ -7,7 +7,7 @@ variable "project" {
 variable "port" {
   description = "Port the container listens on"
   type        = number
-  default     = 3000
+  default     = 3030
 }
 
 variable "region" {
