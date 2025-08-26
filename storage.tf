@@ -11,6 +11,13 @@ resource "google_storage_bucket" "team-forge-bucket" {
   lifecycle {
     prevent_destroy = true
   }
+
+  cors {
+    origin          = ["http://localhost:3000"]
+    method          = ["PUT"]
+    response_header = ["Content-Type"]
+    max_age_seconds = 3600
+  }
 }
 
 resource "google_storage_bucket_iam_member" "public_reader" {
