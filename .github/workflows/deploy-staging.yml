@@ -15,6 +15,12 @@ on:
         required: true
       database_url:
         required: true
+      openai_api_key:
+        required: true
+      bucket_name:
+        required: true
+      bucket_access_key:
+        required: true
 
 jobs:
   terraform_apply:
@@ -55,7 +61,10 @@ jobs:
             -var="project=${{ secrets.project_id }}" \
             -var="docker_image=${{ inputs.service_image }}" \
             -var="auth_secret=${{ secrets.auth_secret }}" \
-            -var="database_url=${{ secrets.database_url }}"
+            -var="database_url=${{ secrets.database_url }}" \
+            -var="openai_api_key=${{ secrets.openai_api_key }}" \
+            -var="bucket_name=${{ secrets.bucket_name }}" \
+            -var="bucket_access_key=${{ secrets.bucket_access_key }}"
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan

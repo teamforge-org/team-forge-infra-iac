@@ -30,3 +30,18 @@ variable "database_url" {
   description = "Application database url"
   type        = string
 }
+
+variable "openai_api_key" {
+  description = "openai API Key"
+  type        = string
+}
+
+variable "bucket_name" {
+  description = "Bucket name for storing images and documents"
+  type        = string
+}
+
+variable "bucket_access_key" {
+  description = "Bucket access key"
+  type        = string
+}

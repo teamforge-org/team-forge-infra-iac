@@ -24,6 +24,10 @@ locals {
     BETTER_AUTH_SECRET = var.auth_secret
     BETTER_AUTH_URL    = "https://team-forge-nodejs-g7cvmcelfa-uc.a.run.app"
     DATABASE_URL       = var.database_url
+    OPENAI_API_KEY     = var.openai_api_key
+    GCL_PROJECT_ID     = var.project
+    BUCKET_NAME        = var.bucket_name
+    BUCKET_ACCESS_KEY  = var.bucket_access_key
   }
 }
 
